@@ -1,5 +1,5 @@
 FROM node:4.6
-WORKDIR /app
+WORKDIR /app/basics
 ADD . /app
 RUN echo " this is a test "
 RUN ls -ltr
