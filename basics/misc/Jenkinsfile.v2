@@ -10,7 +10,7 @@ node {
      myTestContainer.pull()
      myTestContainer.inside {
        sh 'cd ./basics && npm install --only=dev'
-       sh 'npm test'
+       sh 'cd ./basics && npm test'
      }
    }
    stage('test with a DB') {
