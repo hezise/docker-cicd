@@ -1,6 +1,6 @@
 job('NodeJS Docker example') {
     scm {
-        git('git://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
+        git('git://github.com/wardviaene/docker-demo.git', 'master') {  node -> // is hudson.plugins.git.GitSCM
             node / gitConfigName('DSL User')
             node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
@@ -11,7 +11,7 @@ job('NodeJS Docker example') {
     
     steps {
         dockerBuildAndPublish {
-            repositoryName(ac/dc)
+            repositoryName('hezyse/testing_docker')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
