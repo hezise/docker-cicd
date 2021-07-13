@@ -1,6 +1,6 @@
 FROM node:4.6
-WORKDIR /app/basics
-ADD . /app
+WORKDIR /app
+ADD . .
 RUN echo " this is a test "
 RUN ls -ltr
 RUN npm install
