@@ -12,7 +12,7 @@ job('NodeJS Docker example') {
     steps {
         dockerBuildAndPublish {
             repositoryName('hezyse/testing_docker')
-            tag('${GIT_REVISION,length=9}')
+            tag('${BUILD_NUMBER,length=9}')
             registryCredentials('dockerhub')
             forcePull(false)
             forceTag(false)
